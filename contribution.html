@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Contribution</title>
+</head>
+<body>
+  <h1>Team Contribution</h1>
+  <button id="load-contributor" type="button">Show Contributor</button>
+  <p>Contributor Student ID: <span id="contributor-student-id" aria-live="polite"></span></p>
+  <p id="status-message" role="status" aria-live="polite"></p>
+  <a href="index.html">Back to Task Manager</a>
+
+  <script>
+    document.getElementById('load-contributor').addEventListener('click', async () => {
+      const idElement = document.getElementById('contributor-student-id');
+      const statusElement = document.getElementById('status-message');
+      statusElement.textContent = '';
+
+      try {
+        const response = await fetch('contribution.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Request failed (${response.status}).`);
+        const data = await response.json();
+        if (!data.contributorStudentId) throw new Error('Contributor ID is missing.');
+        idElement.textContent = data.contributorStudentId;
+      } catch (error) {
+        idElement.textContent = '';
+        statusElement.textContent = `Could not load contributor information: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
