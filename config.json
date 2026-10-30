@@ -1,0 +1,5 @@
+{
+  "supabaseUrl": "https://ibrgfqqmbedwepbpudii.supabase.co",
+  "supabasePublishableKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlicmdmcXFtYmVkd2VwYnB1ZGlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMzOTc5NDYsImV4cCI6MjEwODk3Mzk0Nn0.SrD5eA75VQh6RjsD2k4sP0Cjn6KMY5R56xPCeon8tkE",
+  "tableName": "tasks"
+}
